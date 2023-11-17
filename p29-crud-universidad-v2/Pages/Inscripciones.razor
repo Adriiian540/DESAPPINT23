@@ -1,4 +1,3 @@
-@* Pages/Inscripciones.razor *@
 @page "/inscripciones"
 @inject InscripcionServicio inscripcionServicio
 @inject IJSRuntime jsRuntime
@@ -29,7 +28,8 @@
 <td>@inscripcion.Promedio</td>
 <td>
 <a
-href="inscripcion/editar/@inscripcion.InscripcionId" class="btn btn-success">Editar</a>
+href="inscripcion/editar/@inscripcion.InscripcionId"
+class="btn btn-success">Editar</a>
 <a class="btn btn-danger" @onclick="async ()=> await
 Borrar(inscripcion)">Borrar</a>
 </td>
