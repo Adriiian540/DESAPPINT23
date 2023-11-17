@@ -60,8 +60,12 @@
                 reservas.Remove(reserva);
     }
 
+    private int cont=0;
     private double TotalRvs() {
-        return reservas.Sum(reserva => reserva.Total);//return reservas.Sum(reserva => reserva.Total());
+        foreach (var reserva in reservas){
+            cont++;
+        }
+        return cont;
     }
 
     private double TotalDsR() {

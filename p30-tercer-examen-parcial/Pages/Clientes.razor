@@ -49,8 +49,8 @@
     </table>
         <p>Clientes = @TotalC().ToString()</p> 
         <p>Promedio Edad = @TotalE().ToString()</p>
-        <p>Mujeres = @TotalM().ToString()</p>
-        <p>Hombres = @TotalH().ToString()</p>
+        <p>Mujeres = @TotalF().ToString()</p>
+        <p>Hombres = @TotalM().ToString()</p>
     </div>
 </div>
 
@@ -73,24 +73,41 @@
         clientes = clienteServicio.ObtenerTodo(cadenabuscar);
     }
 
-
-        private double TotalC() {
-            return clientes.Sum(cliente => clienteServicio.Total());
+    private int cltot = 0;
+    private double TotalC() {
+        foreach (var cliente in clientes){
+            cltot += 1;
         }
+        return cltot;
+    }
 
-        private double TotalE() {
-            var hoy = DateTime.Today;
-            double totalEdades = clientes.Sum(cliente => cliente.ObtenerEdadEnAños());
-            return totalEdades / clienteServicio.Total();
+    private double edadCl = 0;
+    private double TotalE() {
+        foreach(var cliente in clientes){
+            edadCl += cliente.ObtenerEdadEnAños();
         }
+        return (int)edadCl/cltot;
+    }
 
-        private double TotalM() {
-            return clientes.Sum(cliente => clienteServicio.TotalMujeres());
+    private int contM = 0;
+    private double TotalM() {
+        foreach(var cliente in clientes){
+            if(cliente.Genero == 'M'){
+                contM++;
+            }
         }
+        return contM;
+    }
 
-        private double TotalH() {
-            return clientes.Sum(cliente => clienteServicio.TotalHombres());
+    private int contF = 0;
+    private double TotalF() {
+        foreach(var cliente in clientes){
+            if(cliente.Genero == 'F'){
+                contF++;
+            }
         }
+        return contF;
+    }
 
         
 }

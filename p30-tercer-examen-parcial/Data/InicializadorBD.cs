@@ -24,12 +24,12 @@ public class InicializadorBD
         // Inicializar datos de habitaciones
         var habitaciones = new List<Habitacion>
         {
-            new Habitacion {Id = 1, NoHab = 12, Tipo = "Individual", Piso = 1, Costo = 1234.00 },
-            new Habitacion { Id = 2, NoHab = 5, Tipo = "Doble", Piso = 2, Costo = 2500.00 },
-            new Habitacion { Id = 3, NoHab = 7, Tipo = "Triple", Piso = 2, Costo = 2800.00 },
-            new Habitacion { Id = 4, NoHab = 10, Tipo = "Individual", Piso = 4, Costo = 1500.00 },
-            new Habitacion { Id = 5, NoHab = 8, Tipo = "Doble", Piso = 1, Costo = 2464.00 },
-            new Habitacion { Id = 6, NoHab = 15, Tipo = "Triple", Piso = 2, Costo = 3200.00 },
+            new Habitacion {Id = 1, NoHab = 12, Tipo = "Individual", Piso = 1, Costo = 1.23400 },
+            new Habitacion { Id = 2, NoHab = 5, Tipo = "Doble", Piso = 2, Costo = 2.50000 },
+            new Habitacion { Id = 3, NoHab = 7, Tipo = "Triple", Piso = 2, Costo = 2.80000 },
+            new Habitacion { Id = 4, NoHab = 10, Tipo = "Individual", Piso = 4, Costo = 1.50000 },
+            new Habitacion { Id = 5, NoHab = 8, Tipo = "Doble", Piso = 1, Costo = 2.46400 },
+            new Habitacion { Id = 6, NoHab = 15, Tipo = "Triple", Piso = 2, Costo = 3.20000 },
 
         };
         contexto.Habitaciones.AddRange(habitaciones);
